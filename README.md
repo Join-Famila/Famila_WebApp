@@ -1,4 +1,4 @@
-# ilGanzi_client
+# Famila_WebApp
 
 ## 📌 컨벤션 및 규칙
 
