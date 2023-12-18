@@ -1,77 +1,89 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import SettingPage from './pages/setting/setting';
-import setScreenHeight from './setScreenHeight';
-import LoginInf from './pages/logininf/logininf';
-import MainPage from './pages/main/main';
-import OnBorn from './pages/onborn/onborn';
-import Intro from './pages/intro/intro';
-import Login from './pages/login/login';
-import { Provider as ReduxProvider } from 'react-redux';
-import store from './utils/store/index';
-import Signup from './pages/signup/signup';
-import FindID from './pages/FindID/findID';
-import FindPW from './pages/FindPW/findPW';
-import HowToUse from './pages/HowToUse/HowToUse' //모달로 해야한다면 삭제해야함
-import PhoneLogin from './pages/PhoneLogin/PhoneLogin'
-import { PersistGate } from 'redux-persist/integration/react';
-import {persistStore} from 'redux-persist';
-import axios from 'axios';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SettingPage from "./pages/setting/setting";
+import setScreenHeight from "./setScreenHeight";
+import LoginInf from "./pages/logininf/logininf";
+import MainPage from "./pages/main/main";
+import OnBorn from "./pages/onborn/onborn";
+import Intro from "./pages/intro/intro";
+import Login from "./pages/login/login";
+import { Provider as ReduxProvider } from "react-redux";
+import store from "./utils/store/index";
+import Signup from "./pages/signup/signup";
+import FindID from "./pages/FindID/findID";
+import FindPW from "./pages/FindPW/findPW";
+import HowToUse from "./pages/HowToUse/HowToUse"; //모달로 해야한다면 삭제해야함
+import PhoneLogin from "./pages/PhoneLogin/PhoneLogin";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+import axios from "axios";
+
+import MainHome from "./pages/MainHome/MainHome";
 
 export let persistor = persistStore(store);
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <MainPage />,
+  // },
   {
     path: "/",
-    element: <MainPage/>,
-  },{
+    element: <MainHome />,
+  },
+  {
     path: "/settings",
     element: <SettingPage />,
-  },{
+  },
+  {
     path: "/logininf",
     element: <LoginInf />,
-  },{
+  },
+  {
     path: "/login",
-    element: <Login />
-  },{
+    element: <Login />,
+  },
+  {
     path: "/phonelogin",
-    element: <PhoneLogin />
-  },{
+    element: <PhoneLogin />,
+  },
+  {
     path: "/onborn",
-    element: <OnBorn />
-  },{
+    element: <OnBorn />,
+  },
+  {
     path: "/intro",
-    element: <Intro />
-  }, {
+    element: <Intro />,
+  },
+  {
     path: "/signup",
-    element: <Signup />
-  }, {
+    element: <Signup />,
+  },
+  {
     path: "/findID",
-    element: <FindID />
-  }, {
+    element: <FindID />,
+  },
+  {
     path: "/findPW",
-    element: <FindPW />
-  }, {
+    element: <FindPW />,
+  },
+  {
     path: "/HowToUse",
-    element: <HowToUse />
-  } //모달로 한다면 삭제해야함
+    element: <HowToUse />,
+  }, //모달로 한다면 삭제해야함
 ]);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ReduxProvider store = {store}>
+    <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider router = {router}/>
+        <RouterProvider router={router} />
       </PersistGate>
     </ReduxProvider>
   </React.StrictMode>

@@ -42,7 +42,7 @@ export default function Login(){
             <styles.PhoneButton>
                 <styles.PhoneImage src={PhoneLogin}/>
             </styles.PhoneButton>
-            <styles.NoLoginButton>
+            <styles.NoLoginButton onClick={()=>navigate('/')}>
                 <styles.NoLoginImage src={NoLogin}/>
             </styles.NoLoginButton>
             {isLoading && <LoadingScreen/>}
