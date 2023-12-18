@@ -4,7 +4,7 @@ export const MainBody = styled.div`
     width: 100%;
     height: 100%;
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
 `
 
 export const UserInfo = styled.div`
@@ -96,8 +96,11 @@ export const AccountRegister = styled.div`
     }
 `
 export const MeetingSchedule = styled.div`
-
-`
-export const MeetingScheduleItem = styled.div`
-
+    p{
+        font-weight: bold;
+        margin: 5%;
+        span{
+            color: #f7a070;
+        }
+    }
 `

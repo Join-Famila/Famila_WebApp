@@ -4,6 +4,8 @@ import profileIcon from "../../assets/profileIcon_none.png";
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 import FooterMenu from "../../components/FooterMenu/FooterMenu";
 import BottomSheet from "../../components/BottomSheet/BottomSheet";
+import ScheduleSlider from "../../components/ScheduleSlider/ScheduleSlider";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
@@ -53,7 +55,9 @@ const MainHome = () => {
     const [myMeetingSchedule, setMyMeetingSchedule] = useState(2);
     const [meetingSchedule, setMeetingSchedule] = useState([
         {
+            id: 0,
             title: "실버 스윙댄스 모임",
+            img: profileIcon,
             date: "7월 18일(토)",
             time: "오전 10:00",
             dDay: 'D-10',
@@ -61,15 +65,49 @@ const MainHome = () => {
             currentPeople: 3,
             maxPeople: 20,
             dues: "20,000",
+            joined: false
+        },
+        {
+            id: 1,
+            title: "실버 스윙댄스 모임",
+            img: profileIcon,
+            date: "7월 18일(토)",
+            time: "오전 10:00",
+            dDay: 'D-10',
+            location: "효령로55길 23",
+            currentPeople: 3,
+            maxPeople: 20,
+            dues: "20,000",
+            joined: false
+        },
+        {
+            id: 2,
+            title: "실버 스윙댄스 모임",
+            img: profileIcon,
+            date: "7월 18일(토)",
+            time: "오전 10:00",
+            dDay: 'D-10',
+            location: "효령로55길 23",
+            currentPeople: 3,
+            maxPeople: 20,
+            dues: "20,000",
+            joined: false
         }
     ]);
 
     useEffect(() => {
         setMyMeetingSchedule(meetingSchedule.length);
         setMyMeeting(meetingList.length);
-    }, [])
-    
-    
+    }, []);
+
+    const handleMeetingClick = (meetingId, joined) => {
+        // 여기서 meetingId를 이용하여 특정 meeting을 업데이트
+        setMeetingSchedule((prevSchedule) =>
+        prevSchedule.map((item) =>
+            item.id === meetingId ? { ...item, joined } : item
+        )
+        );
+    };
 
     return (
       <>
@@ -90,8 +128,8 @@ const MainHome = () => {
               <styles.MyMeeting>
                   <p>내 모임 <span>{myMeeting}</span></p>
                   <styles.FindMeeting>
-                      {meetingList.slice(0, 2).map(meeting => (
-                          <styles.MeetingItem key={meeting.id}>
+                      {meetingList.slice(0, 2).map((meeting,index) => (
+                          <styles.MeetingItem key={index}>
                               <img src={meeting.meetingImgSrc} alt="img"></img>
                               <p>{meeting.meetingTitle}</p>
                               {/* <styles.ProfileIconImg src={profileIcon}
@@ -113,15 +151,11 @@ const MainHome = () => {
                 </styles.AccountRegister> : 
                     <></>}
                 {/* 모임 일정 */}
-                <p>모임 일정<span>{myMeetingSchedule}</span></p>
                 <styles.MeetingSchedule>
-                    
-                    {meetingSchedule.length !== 0 ?
-                        <styles.MeetingScheduleItem> 
-                            
-                      </styles.MeetingScheduleItem> :
+                <p>모임 일정 <span>{myMeetingSchedule}</span></p>
+                    {meetingSchedule.length !== 0 ? <ScheduleSlider meetingSchedule={meetingSchedule} onMeetingClick={handleMeetingClick}/> : (
                         <></>
-                    }
+                    )}
                 </styles.MeetingSchedule>
 
                 {/* bottomSheet */}
