@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-
 export const MainBody = styled.div`
     width: 100%;
     height: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 `
 
 export const UserInfo = styled.div`
@@ -34,14 +35,14 @@ export const MyMeeting = styled.div`
 export const FindMeeting = styled.div`
     display: flex;
     overflow: auto;
+    justify-content: space-around;
 
 `
 
 export const MeetingItem = styled.div`
-    width: 35%;
-    margin-right: 8%;
+    max-width: 33%;
+    margin-right: 5%;
     text-align: center;
-    
     img{
         border-radius: 50%;
     }
@@ -64,12 +65,39 @@ export const FindMoreMeeting = styled.div`
   border: 1px solid lightgray;
   color: lightgray;
   width: 60px;
-  height: 55px;
+  height: 60px;
   padding: 0.5em;
   word-break: keep-all;
   text-align: center;
   margin-top: 0.5em;
   font-size: 14px;
+  cursor: pointer;
 `
 
+export const AccountRegister = styled.div`
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 5%;
+    padding: 2%;
+    font-size: 15px;
+    word-break: keep-all;
+    color: gray;
+    div{
+        margin-left: 2%;
+    }
+    a{
+        color: #f7a070;
+        text-decoration: underline;
+        &:visited {
+            color: #f7a070;
+            text-decoration: underline;
+        }
+    }
+`
+export const MeetingSchedule = styled.div`
 
+`
+export const MeetingScheduleItem = styled.div`
+
+`
