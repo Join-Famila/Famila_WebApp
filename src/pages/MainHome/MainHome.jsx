@@ -45,7 +45,15 @@ const MainHome = () => {
         meetingLocation: "중량구 면목동", // 모임장소
         meetingPeople: 7,
         isMeetingOrder: false,
-        }]);
+        }, {
+        meetingImgSrc: profileIcon, //모임 썸네일 이미지
+        meetingTitle: "수도권 둘레길 걷기 60대", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 7,
+        isMeetingOrder: false,
+        }
+    ]);
     
     const [isOpen, setIsOpen] = useState(false);
     const toggleBottomSheet = () => {
@@ -62,6 +70,7 @@ const MainHome = () => {
             time: "오전 10:00",
             dDay: 'D-10',
             location: "효령로55길 23",
+            locationDetail: "동산빌딩 3층 302호",
             currentPeople: 3,
             maxPeople: 20,
             dues: "20,000",
@@ -75,6 +84,7 @@ const MainHome = () => {
             time: "오전 10:00",
             dDay: 'D-10',
             location: "효령로55길 23",
+            locationDetail: "동산빌딩 3층 302호",
             currentPeople: 3,
             maxPeople: 20,
             dues: "20,000",
@@ -88,6 +98,7 @@ const MainHome = () => {
             time: "오전 10:00",
             dDay: 'D-10',
             location: "효령로55길 23",
+            locationDetail: "동산빌딩 3층 302호",
             currentPeople: 3,
             maxPeople: 20,
             dues: "20,000",
@@ -108,6 +119,12 @@ const MainHome = () => {
         )
         );
     };
+
+    const [selectBottomSheetPage, setSelectBottomSheetPage] = useState("showMoreMeeting")
+    const handleSelectBottomSheetPage = (selectPage) => {
+        setSelectBottomSheetPage(selectPage);
+        toggleBottomSheet();
+    }
 
     return (
       <>
@@ -138,7 +155,7 @@ const MainHome = () => {
                               <p>testtesttest</p> */}
                           </styles.MeetingItem>
                       ))}
-                      <styles.FindMoreMeeting onClick={toggleBottomSheet}>
+                        <styles.FindMoreMeeting onClick={()=>handleSelectBottomSheetPage("showMoreMeeting")}>
                           <p>+{meetingList.length === 0 ? "모임 찾기" : "더보기"}</p>
                       </styles.FindMoreMeeting>
                   </styles.FindMeeting>
@@ -147,13 +164,18 @@ const MainHome = () => {
                 {isAccountRegister ?
                 <styles.AccountRegister>
                         <FontAwesomeIcon icon={faCircleInfo} />
-                        <div>모임을 만들고 수익을 얻으시려면 <Link to="/">여기에서</Link> 계좌를 등록해 주세요!</div>
+                        <div>모임을 만들고 수익을 얻으시려면 <span>여기에서</span> 계좌를 등록해 주세요!</div>
                 </styles.AccountRegister> : 
                     <></>}
                 {/* 모임 일정 */}
                 <styles.MeetingSchedule>
                 <p>모임 일정 <span>{myMeetingSchedule}</span></p>
-                    {meetingSchedule.length !== 0 ? <ScheduleSlider meetingSchedule={meetingSchedule} onMeetingClick={handleMeetingClick}/> : (
+                    {meetingSchedule.length !== 0 ?
+                        <ScheduleSlider
+                            meetingSchedule={meetingSchedule}
+                            onMeetingClick={handleMeetingClick}
+                            handleSelectBottomSheetPage={handleSelectBottomSheetPage}
+                        /> : (
                         <></>
                     )}
                 </styles.MeetingSchedule>
@@ -164,6 +186,8 @@ const MainHome = () => {
                     meetingList={meetingList}
                     myMeeting={myMeeting}
                     toggleBottomSheet={toggleBottomSheet}
+                    selectBottomSheetPage={selectBottomSheetPage}
+                    meetingSchedule={meetingSchedule}
                 />
             </styles.MainBody>
             <FooterMenu/>

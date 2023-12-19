@@ -36,7 +36,7 @@ export const CreateMeeting = styled.div`
     width: 120px;
     text-align: center;
     font-weight: bold;
-    z-index: 10;
+    z-index: 12;
 `
 
 export const menuHome = styled.div`

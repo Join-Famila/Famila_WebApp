@@ -86,7 +86,7 @@ export const AccountRegister = styled.div`
     div{
         margin-left: 2%;
     }
-    a{
+    span{
         color: #f7a070;
         text-decoration: underline;
         &:visited {

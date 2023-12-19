@@ -4,9 +4,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import * as styles from './ScheduleSliderStyle'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWonSign } from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-const ScheduleSlider = ({ meetingSchedule, onMeetingClick  }) => {
+const ScheduleSlider = ({ meetingSchedule, onMeetingClick, handleSelectBottomSheetPage }) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -40,7 +40,7 @@ const ScheduleSlider = ({ meetingSchedule, onMeetingClick  }) => {
                               <styles.ScheduleLocation>
                                   <styles.ScheduleInfoCategory>위치</styles.ScheduleInfoCategory>
                                   {meeting.location}
-                                  <Link to="/">(지도보기)</Link>
+                                  <p onClick={()=>handleSelectBottomSheetPage("showMap")}>(지도보기)</p>
                               </styles.ScheduleLocation>
                               <styles.SchedulePeople>
                                   <styles.ScheduleInfoCategory>인원</styles.ScheduleInfoCategory>
