@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Slider from "react-slick";
-import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 
 export const StyledSlider = styled(Slider)`

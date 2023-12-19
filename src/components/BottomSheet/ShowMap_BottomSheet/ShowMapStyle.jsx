@@ -56,3 +56,36 @@ export const MeetingLocation = styled.p`
     margin: 0;
 `
 
+export const MapComponent = styled.div`
+`
+export const LocationInfoContainer = styled.div`
+position: relative;
+   
+`
+
+export const LocationInfo = styled.div`
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 5%;
+`
+export const LocationDetail = styled.p`
+    font-weight: bold;
+    margin: 5%;
+`
+export const Location = styled.span`
+    color: gray;
+    font-size: 14px;
+    margin: 5%;
+`
+export const LocationCopy = styled.span`
+    color: lightGray;
+    text-decoration: underline;
+    font-size: 14px;
+`
+

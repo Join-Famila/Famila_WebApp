@@ -2,10 +2,26 @@ import React from 'react';
 import * as styles from './ShowMapStyle';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot,  faX } from "@fortawesome/free-solid-svg-icons";
+import KakaoMap from '../../KakaoMap/KakaoMap';
 
-
-const ShowMap = ({meetingList, toggleBottomSheet}) => {
+const ShowMap = ({
+    toggleBottomSheet,
+    location,
+    locationDetail
+}) => {
     
+    const copyLocation = () => {
+        const inputElement = document.createElement('input');
+        inputElement.value = location;
+
+        document.body.appendChild(inputElement);
+        inputElement.select();
+        document.execCommand('copy');
+        document.body.removeChild(inputElement);
+
+        alert('주소가 복사되었습니다!');
+    };
+
   return (
       <>
           <styles.BottomSheetHeader>
@@ -18,21 +34,16 @@ const ShowMap = ({meetingList, toggleBottomSheet}) => {
                 onClick={toggleBottomSheet}
               />
           </styles.BottomSheetHeader>
-          {/* <styles.MeetingItemsDiv>
-              {meetingList.map(meeting => (
-                    <styles.MeetingItem key={meeting.id}>
-                        <img src={meeting.meetingImgSrc} alt="img"></img>
-                      <styles.MeetingItemTexts>
-                          <styles.MeetingTitle>{meeting.meetingTitle}</styles.MeetingTitle>
-                          <styles.MeetingLocation>
-                              <FontAwesomeIcon icon={faLocationDot} style={{ color: "#f7a070"}} />{" "}
-                              {meeting.meetingLocation}
-                          </styles.MeetingLocation>
-                      </styles.MeetingItemTexts>
-                    </styles.MeetingItem>
-              ))}
-              <div style={{paddingTop:"5%"}}></div>
-          </styles.MeetingItemsDiv> */}
+          <styles.MapComponent>
+              <KakaoMap location={ location} />
+          </styles.MapComponent>
+          <styles.LocationInfoContainer>
+              <styles.LocationInfo>
+                  <styles.LocationDetail>{locationDetail}</styles.LocationDetail>
+                      <styles.Location>{location}</styles.Location>
+                      <styles.LocationCopy onClick={copyLocation}>주소 복사하기</styles.LocationCopy>
+              </styles.LocationInfo>
+          </styles.LocationInfoContainer>
       </>
   )
 }

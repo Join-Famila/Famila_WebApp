@@ -83,7 +83,7 @@ const MainHome = () => {
             date: "7월 18일(토)",
             time: "오전 10:00",
             dDay: 'D-10',
-            location: "효령로55길 23",
+            location: "서울시",
             locationDetail: "동산빌딩 3층 302호",
             currentPeople: 3,
             maxPeople: 20,
@@ -97,7 +97,7 @@ const MainHome = () => {
             date: "7월 18일(토)",
             time: "오전 10:00",
             dDay: 'D-10',
-            location: "효령로55길 23",
+            location: "세종시",
             locationDetail: "동산빌딩 3층 302호",
             currentPeople: 3,
             maxPeople: 20,
@@ -121,8 +121,10 @@ const MainHome = () => {
     };
 
     const [selectBottomSheetPage, setSelectBottomSheetPage] = useState("showMoreMeeting")
-    const handleSelectBottomSheetPage = (selectPage) => {
+    const [currentMapId, setCurrentMapId] = useState(0);
+    const handleSelectBottomSheetPage = (selectPage, index) => {
         setSelectBottomSheetPage(selectPage);
+        setCurrentMapId(index);
         toggleBottomSheet();
     }
 
@@ -188,6 +190,7 @@ const MainHome = () => {
                     toggleBottomSheet={toggleBottomSheet}
                     selectBottomSheetPage={selectBottomSheetPage}
                     meetingSchedule={meetingSchedule}
+                    currentMapId={currentMapId}
                 />
             </styles.MainBody>
             <FooterMenu/>
