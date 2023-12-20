@@ -5,6 +5,108 @@ export const MainBody = styled.div`
     height: 100%;
     margin-top: 10%;
     margin-bottom: 30%;
+    
+    
+    .talkArea {
+    width: 100%;
+    height: 110px;
+    box-sizing: border-box;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    }
+
+    .talkPng {
+    width: 78px;
+    height: 78px;
+    border-radius: 100px;
+    // background-image: url("../../assets/A.png");
+    background-size: cover;
+    margin-right: 14px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+
+    .leader {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    border-radius: 100px;
+    // background-image: url("../../assets/leader.png");
+    background-size: cover;
+    flex-shrink: 0;
+    }
+
+    .talkTitle {
+    width: 84%;
+    overflow: hidden;
+    line-height: 24px;
+    height: 24px;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    }
+
+    .people {
+    color: var(--gray-gray-500, #afb2c0);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    position: relative;
+    }
+
+    .message {
+    width: 84%;
+    overflow: hidden;
+    line-height: 22px;
+    height: 22px;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    color: var(--gray-gray600, #8a8d9e);
+    }
+
+    .mesNumArea {
+    }
+
+    .mesNum {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    position: relative;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 500px;
+    background: #ff3a3a;
+    }
+
+    .one {
+    display: flex;
+    position: relative;
+    padding: 12px 0px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+    }
+    .myMoim {
+    width: 100%;
+    line-height: 26px;
+    height: 26px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    padding: 0 16px;
+    box-sizing: border-box;
+    }
+    .ora {
+    color: #f5935c;
+    }
+
 `
 
 export const UserInfo = styled.div`

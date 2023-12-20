@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
+import imgA from '../../assets/A.png';
+import imgLeader from '../../assets/leader.png';
+
 
 const MainHome = () => {
     // 시니어 or 도우미 역할
@@ -192,6 +195,20 @@ const MainHome = () => {
                     meetingSchedule={meetingSchedule}
                     currentMapId={currentMapId}
                 />
+                <div className="myMoim" style={{marginTop: "25px"}}>
+                    단체톡 <span className="ora">2</span>
+                </div>
+                <div className="talkArea">
+                    <div className="talkPng" style={{backgroundImage: `url(${imgA})`}}>
+                        <div className="leader" style={{backgroundImage: `url(${imgLeader})`}}></div>
+                    </div>
+                    <div className="one">
+                    <div className="talkTitle">실버 스윙댄스 모임 두줄에서 일립시스</div>
+                    <div className="people">73</div>
+                    <div className="message">어서오세요~!~! 저는 어쩌구 저쩌구 쏼라</div>
+                    <div className="mesNumArea"><div className="mesNum">23</div></div>
+                    </div>
+                </div>
             </styles.MainBody>
             <FooterMenu/>
       </>

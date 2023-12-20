@@ -6,7 +6,8 @@ export const BottomSheetBody = styled.div`
     left: 0;
     width: 90%;
     height: ${({ isOpen }) => (isOpen ? '60%' : '0')};
-    z-index: ${({ isOpen }) => (isOpen ? '20' : '0')};
+    z-index: ${({ isOpen }) => (isOpen ? '20' : '9')};
+    // z-index: 20;
     // transition: height 0.5s ease-in-out;
     transition: height 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     background-color: #fff;

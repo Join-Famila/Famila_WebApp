@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import * as styles from './FooterMenuStyle';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faMountainCity, faFaceSmile, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faCartShopping, faFaceSmile, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const FooterMenu = () => {
 
@@ -57,16 +57,16 @@ const FooterMenu = () => {
                 color: currentPageSelect === 'lifeSupport' ? '#f5935c' : '#8a8d9e',
                 }}
               >
-                  <FontAwesomeIcon icon={faMountainCity} />
-                  <p>생활도움</p>
+                  <FontAwesomeIcon icon={faFaceSmile} />
+                  <p>모임 찾기</p>
               </styles.menuLifeSupport>
               <styles.menuActivityMeeting onClick={activityMeetingButton}
               style={{
                 color: currentPageSelect === 'activityMeeting' ? '#f5935c' : '#8a8d9e',
                   }}
               >
-                  <FontAwesomeIcon icon={faFaceSmile} />
-                  <p>모임활동</p>
+                  <FontAwesomeIcon icon={faCartShopping} />
+                  <p>취미용품</p>
               </styles.menuActivityMeeting>
               <styles.menuMyInfo onClick={myInfoButton}
               style={{

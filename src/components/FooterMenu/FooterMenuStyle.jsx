@@ -9,7 +9,7 @@ export const FooterBody = styled.div`
     align-items: center;
     z-index: 10;
     width: 100%;
-    bottom: 0;
+    bottom: -1%;
     left: 0;
     color: #8a8d9e;
     background-color: white;
