@@ -40,7 +40,7 @@ const ScheduleSlider = ({ meetingSchedule, onMeetingClick, handleSelectBottomShe
                               <styles.ScheduleLocation>
                                   <styles.ScheduleInfoCategory>위치</styles.ScheduleInfoCategory>
                                   {meeting.location}
-                                  <p onClick={()=>handleSelectBottomSheetPage("showMap", index)}>(지도보기)</p>
+                                  <styles.ShowMapText onClick={()=>handleSelectBottomSheetPage("showMap", index)}>(지도보기)</styles.ShowMapText>
                               </styles.ScheduleLocation>
                               <styles.SchedulePeople>
                                   <styles.ScheduleInfoCategory>인원</styles.ScheduleInfoCategory>

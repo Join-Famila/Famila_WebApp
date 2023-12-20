@@ -6,7 +6,6 @@ export const MainBody = styled.div`
     margin-top: 10%;
     margin-bottom: 30%;
     
-    
     .talkArea {
     width: 100%;
     height: 110px;

@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     element: <HowToUse />,
   }, //모달로 한다면 삭제해야함
   {
-    path: "/MeetingDetails",
+    path: "/MeetingDetails/*",
     element: <MeetingDetails />,
   },
 ]);

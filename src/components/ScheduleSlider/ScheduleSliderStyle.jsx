@@ -57,12 +57,12 @@ export const ScheduleInfoCategory = styled.span`
 export const ScheduleLocation = styled.div`
     display: flex;
     margin: 2% 1%;
-    p{
-        color: #AfB2C0;
-        text-decoration: underline;
-        margin: 0;
-        margin-left: 10px;
-    }
+`
+export const ShowMapText = styled.span`
+    color: #AfB2C0;
+    text-decoration: underline;
+    margin: 0;
+    margin-left: 10px;
 `
 export const SchedulePeople = styled.div`
     display: flex;

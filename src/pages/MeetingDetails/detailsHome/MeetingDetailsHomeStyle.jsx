@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MeetingDetailsBody = styled.div`
+export const MeetingDetailsHomeBody = styled.div`
     .head {
   width: 100%;
   height: 56px;
@@ -27,6 +27,15 @@ export const MeetingDetailsBody = styled.div`
   padding: 2px 10px 0px 10px;
   box-sizing: border-box;
   justify-content: space-between;
+  a{
+    color: inherit;
+    text-decoration: none;
+    :hover{
+        color: inherit;
+        text-decoration: none;
+    }
+  }
+
 }
 
 .title {

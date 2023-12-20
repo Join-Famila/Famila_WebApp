@@ -187,6 +187,7 @@ const MainHome = () => {
                             handleSelectBottomSheetPage={handleSelectBottomSheetPage}
                         /> : (
                         <></>
+                        
                     )}
                 </styles.MeetingSchedule>
 

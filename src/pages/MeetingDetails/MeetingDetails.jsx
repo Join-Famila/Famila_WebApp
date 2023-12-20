@@ -1,182 +1,184 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import * as styles from './MeetingDetailsStyle';
-import { StyledSlider } from '../../components/ScheduleSlider/ScheduleSliderStyle';
-import arrowLeftImg from '../../assets/arrow-left.png';
-import crownImg from '../../assets/crown.png';
-import kakaoIcon from '../../assets/kakao_icon.png';
-import areaIcon from '../../assets/areaIcon.png';
 import imgA from '../../assets/A.png';
+import arrowLeftImg from '../../assets/arrow-left.png';
 import FooterMenu from '../../components/FooterMenu/FooterMenu';
+import BottomSheet from "../../components/BottomSheet/BottomSheet";
+import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import MeetingDetailsHome from './detailsHome/MeetingDetailsHome';
+import MeetingPost from './post/MeetingPost';
+import MeetingPhoto from './photo/MeetingPhoto';
+import MeetingChat from './chat/MeetingChat';
+import MeetingItems from './items/MeetingItems';
 
 const MeetingDetails = () => {
-    const goBack = () => {
-    window.history.back();
-  };
 
-  const [isMeetingOrder, setIsMeetingOrder] = useState(true);
+  const navigate = useNavigate();
+
+  const goToDetailsHome = () => {
+    navigate("/MeetingDetails/MeetingDetailsHome");
+  }
+
+  const [myMeeting, setMyMeeting] = useState(2);
+    const [meetingList, setMeetingList] = useState([{
+        meetingImgSrc: imgA, //모임 썸네일 이미지
+        meetingTitle: "실버 스윙댄스 모임 두줄에", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 8,
+        isMeetingOrder: true,
+    }, {
+        meetingImgSrc: imgA, //모임 썸네일 이미지
+        meetingTitle: "중년 러닝 모임", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 7,
+        isMeetingOrder: false,
+    }, {
+        meetingImgSrc: imgA, //모임 썸네일 이미지
+        meetingTitle: "수도권 둘레길 걷기 60대", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 7,
+        isMeetingOrder: false,
+        }, {
+        meetingImgSrc: imgA, //모임 썸네일 이미지
+        meetingTitle: "수도권 둘레길 걷기 60대", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 7,
+        isMeetingOrder: false,
+        }, {
+        meetingImgSrc: imgA, //모임 썸네일 이미지
+        meetingTitle: "수도권 둘레길 걷기 60대", //모임 제목
+        meetingMoreInfo : "", //모임 상세정보 주소
+        meetingLocation: "중량구 면목동", // 모임장소
+        meetingPeople: 7,
+        isMeetingOrder: false,
+        }
+    ]);
+    
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleBottomSheet = () => {
+        setIsOpen(!isOpen);
+    };
+    const [myMeetingSchedule, setMyMeetingSchedule] = useState(2);
+    const [meetingSchedule, setMeetingSchedule] = useState([
+        {
+            id: 0,
+            title: "실버 스윙댄스 모임",
+            img: imgA,
+            date: "7월 18일(토)",
+            time: "오전 10:00",
+            dDay: 'D-10',
+            location: "효령로55길 23",
+            locationDetail: "동산빌딩 3층 302호",
+            currentPeople: 3,
+            maxPeople: 20,
+            dues: "20,000",
+            joined: false
+        },
+        {
+            id: 1,
+            title: "실버 스윙댄스 모임",
+            img: imgA,
+            date: "7월 18일(토)",
+            time: "오전 10:00",
+            dDay: 'D-10',
+            location: "서울시",
+            locationDetail: "멋사빌딩 1층 102호",
+            currentPeople: 3,
+            maxPeople: 20,
+            dues: "20,000",
+            joined: false
+        },
+        {
+            id: 2,
+            title: "실버 스윙댄스 모임",
+            img: imgA,
+            date: "7월 18일(토)",
+            time: "오전 10:00",
+            dDay: 'D-10',
+            location: "세종시",
+            locationDetail: "63빌딩 63층 63호",
+            currentPeople: 3,
+            maxPeople: 20,
+            dues: "20,000",
+            joined: false
+        }
+    ]);
+
+    useEffect(() => {
+        setMyMeetingSchedule(meetingSchedule.length);
+      setMyMeeting(meetingList.length);
+    }, []);
+
+    const handleMeetingClick = (meetingId, joined) => {
+        // 여기서 meetingId를 이용하여 특정 meeting을 업데이트
+        setMeetingSchedule((prevSchedule) =>
+        prevSchedule.map((item) =>
+            item.id === meetingId ? { ...item, joined } : item
+        )
+        );
+  };
+  
+    const [selectBottomSheetPage, setSelectBottomSheetPage] = useState("showMoreMeeting")
+    const [currentMapId, setCurrentMapId] = useState(0);
+    const handleSelectBottomSheetPage = (selectPage, index) => {
+        setSelectBottomSheetPage(selectPage);
+        setCurrentMapId(index);
+        toggleBottomSheet();
+  }
+
+  useEffect(() => {
+    goToDetailsHome();
+  }, []);
+
 
   return (
-      <>
-        <styles.MeetingDetailsBody>
-          <div className="head">
-            <img
-              className="leftArrow"
-              src={arrowLeftImg}
-              onClick={goBack}
-              alt="leftArrowimg"
+    <styles.MeetingDetailsBody>
+      <Routes>
+        <Route
+          path="MeetingDetailsHome"
+          element={
+            <MeetingDetailsHome
+              myMeetingSchedule={myMeetingSchedule}
+              meetingSchedule={meetingSchedule}
+              handleMeetingClick={handleMeetingClick}
+              handleSelectBottomSheetPage={handleSelectBottomSheetPage}
             />
-            실버들의 러닝 모임
-          </div>
-          <div className="titleBox">
-            <div className="selTitle">홈</div>
-            <div className="title">게시판</div>
-            <div className="title">사진첩</div>
-            <div className="title">단체톡</div>
-            <div className="title">용품구매</div>
-          </div>
-          <div className="moimImgList" style={{backgroundImage: `url(${imgA})`}}>
-            <div className="signup">내가 참여한 모임</div>
-          <div className="dot" style={{
-            position: "absolute",
-            bottom: "10px"
-          }}>
-              <div className="grayDot"></div>
-              <div className="blackGrayDot"></div>
-            </div>
-          </div>
-          <div className="moimTagArea">
-            <div className="whiteTag">🏌🏼 활동/건강</div>
-            <div className="tag">헬스</div>
-            <div className="tag">등산</div>
-            <div className="tag">자전거</div>
-          </div>
-          <div className="myMoim" style={{marginTop: "20px"}}>
-            모임 일정 <span className="ora">2</span>
-          </div>
-          <div className="moim1jung">
-            <div className="moimTitleArea">
-              <div className="moimMinImg" style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimTitleText">실버 스윙댄스 모임</div>
-            </div>
-            <div className="moimNeyoungArea">
-              <div className="moimWhen">
-                <span className="grayMin">날짜 </span> <span>7월 18일(토) </span>
-                <span>오전 10:00 </span>
-                <span className="red">D-10</span>
-              </div>
-              <div className="moimWhen">
-                <span className="grayMin">위치 </span> <span>효령로55길 23 </span>
-                <span className="grayMid" style={{textDecorationLine: "underline"}}
-                  >(지도보기)</span
-                >
-              </div>
-              <div className="moimWhen">
-                <span className="grayMin">인원 </span>
-                <span><a className="red">3</a>/20명</span>
-                <span className="grayMid">(<a>17</a>자리 남음)</span>
-              </div>
-              <div
-                className="moimWhen"
-                style={{
-                  height: "32px",
-                  borderTop: "1px solid #e7e8ee",
-                  color: "#f5935c",
-                  padding: "8px 0 0 0",
-                  gap: "0",
-                  justifyContent: "center"
-                }}
-              >
-                회비 : &#8361;<a>20,000</a>원
-              </div>
-            </div>
-          </div>
-          <div className="illjungCham">일정 참여</div>
-          <div className="dot">
-            <div className="blackGrayDot"></div>
-            <div className="grayDot"></div>
-          </div>
-          <div className="myMoim" style={{marginTop: "16px"}}>
-            모임원 <span className="ora">12</span>
-            <div className="viewAll">전체 보기</div>
-          </div>
-          <div className="moimPeopleArea">
-            <div className="moimJangArea">
-              <div className="moimJangImg" style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimJangText">
-                <div className="moimJangBadge">
-                  <img className="crown" src={crownImg} alt="crownImg"/>
-                  모임장
-                </div>
-                <div className="moimJangName">김수지</div>
-              </div>
-            </div>
-            <div className="moimPeople">
-              <div className="moimPeopleImg" style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimPeopleImg"style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimPeopleImg"style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimPeopleImg"style={{backgroundImage: `url(${imgA})`}}></div>
-              <div className="moimPeopleImg"style={{backgroundImage: `url(${imgA})`}}>+9</div>
-            </div>
-          </div>
-          <div className="kakaoArea">
-            <div className="kakao0you">
-              <img className="kakao" src={kakaoIcon} alt="kakaoIcon"/>
-              카카오톡에 모임 공유하기
-            </div>
-          </div>
-          <div className="myMoim" style={{marginTop: "16px"}}>모임 소개</div>
-          <div className="introMoim">
-            -가볍게 즐길 수 있는 사교 러닝 모임-<br />
-            • 몸치 박치 여도 괜찮은 커플 댄스모임<br />
-            • 친구 사귀기 좋고 즐거움이 있는 모임<br />
-            • 모임 회비 : 10,000원<br />• 수업 회비 : 30,000원
-          </div>
-          <div className="myMoim" style={{marginTop: "32px"}}>
-            게시판
-            <div className="viewAll">전체 보기</div>
-          </div>
-          <div className="gaesiArea">
-            <div className="geul"><span className="ora">[필독]</span>*공지*</div>
-            <div className="geul"><span className="ora">[필독]</span>가입인사 양식</div>
-          </div>
-          <div className="myMoim" style={{marginTop: "32px"}}>
-            사진첩
-            <div className="viewAll">전체 보기</div>
-          </div>
-          <div className="moimSaJinArea">
-            <div className="moimSaJin" style={{backgroundImage: `url(${imgA})`}}></div>
-            <div className="moimSaJin" style={{backgroundImage: `url(${imgA})`}}></div>
-            <div className="moimSaJin" style={{backgroundImage: `url(${imgA})`}}>+9</div>
-          </div>
-          <div className="myMoim" style={{marginTop: "32px"}}>활동지역</div>
-          <div className="moimListAdd">
-            <img className="listAddicon" src={areaIcon} alt="areaIcon"/>중랑구 면목동
-          </div>
-          <div className="moimAddressViewArea">
-            <div className="moimAddView"></div>
-        </div>
-        {isMeetingOrder ?
-          <></> :
-          <div className="moimSigninArea">
-            <div className="moimSignin">모임 참여</div>
-          </div>
           }
-        {isMeetingOrder ?
-          <>
-            <div className="make1jung">
-                <div className="make1Text">일정 생성</div>
-              </div>
-              <div className="invite">
-                <div className="inviteText">+ 친구 초대</div>
-              </div>
-          </> :
-            <></>
-        }
+        ></Route>
+        <Route
+          path="MeetingPost"
+          element={<MeetingPost />}
+        ></Route>
+        <Route
+          path="MeetingPhoto"
+          element={<MeetingPhoto />}
+        ></Route>
+        <Route
+          path="MeetingChat"
+          element={<MeetingChat />}
+        ></Route>
+        <Route
+          path="MeetingItems"
+          element={<MeetingItems />}
+        ></Route>
+      </Routes>
+      
         
-          <div className="none"><div className="nonenone"></div></div>
-      </styles.MeetingDetailsBody>
+      <BottomSheet
+        isOpen={isOpen}
+        meetingList={meetingList}
+        myMeeting={myMeeting}
+        toggleBottomSheet={toggleBottomSheet}
+        selectBottomSheetPage={selectBottomSheetPage}
+        meetingSchedule={meetingSchedule}
+        currentMapId={currentMapId}
+      />
       <FooterMenu/>
-      </>
+      </styles.MeetingDetailsBody>
   )
 }
 
