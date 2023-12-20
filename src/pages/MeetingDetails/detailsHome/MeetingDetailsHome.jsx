@@ -20,7 +20,7 @@ const MeetingDetailsHome = ({
     const navigate = useNavigate();
     
   const createMeeting =() => {
-    navigate("/");
+    navigate("/CreateMeeting");
     }
 
     const goToImgs = () => {
@@ -33,9 +33,9 @@ const MeetingDetailsHome = ({
     const goBack = () => {
         // window.history.back();
         navigate("/");
-  };
+    };
     
-    const [isMeetingOrder, setIsMeetingOrder] = useState(false);
+    const [isMeetingOrder, setIsMeetingOrder] = useState(true);
     const [meetingTitle, setMeetingTitle] = useState("실버들의 러닝 모임");
     const [isJoined, setIsJoined] = useState(false);
     

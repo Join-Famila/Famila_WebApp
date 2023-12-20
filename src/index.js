@@ -24,6 +24,7 @@ import { persistStore } from "redux-persist";
 import axios from "axios";
 
 import MainHome from "./pages/MainHome/MainHome";
+import CreateMeeting from "./pages/MainHome/CreateMeeting";
 
 export let persistor = persistStore(store);
 axios.defaults.withCredentials = true;
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
   {
     path: "/MeetingDetails/*",
     element: <MeetingDetails />,
+  },
+  {
+    path: "/CreateMeeting",
+    element: <CreateMeeting />,
   },
 ]);
 

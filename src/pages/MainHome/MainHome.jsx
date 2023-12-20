@@ -12,10 +12,11 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import imgA from '../../assets/A.png';
 import imgLeader from '../../assets/leader.png';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const MainHome = () => {
+    const navigate = useNavigate();
     // 시니어 or 도우미 역할
     const [userRole, setUserRole] = useState("시니어");
     const [userName, setUserName] = useState("홍길동");
@@ -132,8 +133,8 @@ const MainHome = () => {
         toggleBottomSheet();
     }
 
-    const goToCreateMeeting = () => {
-        
+     const createMeeting =() => {
+        navigate("/CreateMeeting");
     }
 
 
@@ -217,7 +218,7 @@ const MainHome = () => {
                     </div>
                 </div>
             </styles.MainBody>
-            <styles.CreateMeeting onClick={goToCreateMeeting}>+ 모임 만들기</styles.CreateMeeting>
+            <styles.CreateMeeting onClick={createMeeting}>+ 모임 만들기</styles.CreateMeeting>
             <FooterMenu/>
       </>
   )
