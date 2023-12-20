@@ -8,25 +8,42 @@ import areaIcon from '../../../assets/areaIcon.png';
 import arrowLeftImg from '../../../assets/arrow-left.png';
 import { useNavigate, Link } from 'react-router-dom';
 
-const MeetingDetailsHome = ({myMeetingSchedule, meetingSchedule, handleMeetingClick, handleSelectBottomSheetPage}) => {
+const MeetingDetailsHome = ({
+    myMeetingSchedule,
+    meetingSchedule,
+    handleMeetingClick,
+    handleSelectBottomSheetPage,
+    joinedMember,
+    toggleJoinedMemberBottomSheet
+}) => {
 
     const navigate = useNavigate();
-  
     
   const createMeeting =() => {
     navigate("/");
     }
 
     const goToImgs = () => {
-    navigate("/");
+    navigate("/MeetingDetails/MeetingPhoto");
     }
+    const goToPost = () => {
+    navigate("/MeetingDetails/MeetingPost");
+    }
+    
     const goBack = () => {
-    window.history.back();
+        // window.history.back();
+        navigate("/");
   };
     
-    const [isMeetingOrder, setIsMeetingOrder] = useState(true);
+    const [isMeetingOrder, setIsMeetingOrder] = useState(false);
     const [meetingTitle, setMeetingTitle] = useState("실버들의 러닝 모임");
+    const [isJoined, setIsJoined] = useState(false);
     
+    const meetingJoinedSuccess = () => {
+        setIsJoined(!isJoined);
+        alert("모임 창여 완료되었습니다. 단체톡에서 모임원에게 인사를 나눠주세요");
+
+    }
     
     return (
         <styles.MeetingDetailsHomeBody>
@@ -74,8 +91,8 @@ const MeetingDetailsHome = ({myMeetingSchedule, meetingSchedule, handleMeetingCl
                     )}
             </styles.MeetingSchedule>
             <div className="myMoim" style={{ marginTop: "16px" }}>
-                모임원 <span className="ora">12</span>
-                <div className="viewAll">전체 보기</div>
+                모임원 <span className="ora">{joinedMember.length}</span>
+                <div className="viewAll" onClick={toggleJoinedMemberBottomSheet}>전체 보기</div>
             </div>
             <div className="moimPeopleArea">
                 <div className="moimJangArea">
@@ -85,18 +102,40 @@ const MeetingDetailsHome = ({myMeetingSchedule, meetingSchedule, handleMeetingCl
                             <img className="crown" src={crownImg} alt="crownImg" />
                             모임장
                         </div>
-                        <div className="moimJangName">김수지</div>
+                        <div className="moimJangName">{joinedMember[0].name}</div>
                     </div>
                 </div>
                 <div className="moimPeople">
-                    <div className="moimPeopleImg" style={{ backgroundImage: `url(${imgA})` }}></div>
-                    <div className="moimPeopleImg" style={{ backgroundImage: `url(${imgA})` }}></div>
-                    <div className="moimPeopleImg" style={{ backgroundImage: `url(${imgA})` }}></div>
-                    <div className="moimPeopleImg" style={{ backgroundImage: `url(${imgA})` }}></div>
-                    <div className="moimPeopleImg" style={{ backgroundImage: `url(${imgA})` }}>+9</div>
+                    {joinedMember.length - 5 > 0 ? (
+                        <>
+                            {joinedMember.slice(1, 5).map((member, index) => (
+                            <div
+                                key={index}
+                                className="moimPeopleImg"
+                                style={{ backgroundImage: `url(${member.profileImg})` }}
+                            ></div>
+                            ))}
+                            <div
+                            className="moimPeopleImg"
+                            style={{ backgroundImage: `url(${imgA})` }}
+                            onClick={toggleJoinedMemberBottomSheet}
+                            >
+                            +{joinedMember.length - 5}
+                            </div>
+                        </>
+                        ) : (
+                        joinedMember.map((member, index) => (
+                            <div
+                            key={index}
+                            className="moimPeopleImg"
+                            style={{ backgroundImage: `url(${member.profileImg})` }}
+                            ></div>
+                        ))
+                        )}
+
                 </div>
             </div>
-            <div className="kakaoArea">
+            <div className="kakaoArea" onClick={() => alert("준비중입니다")}>
                 <div className="kakao0you">
                     <img className="kakao" src={kakaoIcon} alt="kakaoIcon" />
                     카카오톡에 모임 공유하기
@@ -111,7 +150,7 @@ const MeetingDetailsHome = ({myMeetingSchedule, meetingSchedule, handleMeetingCl
             </div>
             <div className="myMoim" style={{ marginTop: "32px" }}>
                 게시판
-                <div className="viewAll">전체 보기</div>
+                <div className="viewAll" onClick={goToPost}>전체 보기</div>
             </div>
             <div className="gaesiArea">
                 <div className="geul"><span className="ora">[필독]</span>*공지*</div>
@@ -133,12 +172,23 @@ const MeetingDetailsHome = ({myMeetingSchedule, meetingSchedule, handleMeetingCl
             <div className="moimAddressViewArea">
                 <div className="moimAddView"></div>
             </div>
-            {isMeetingOrder ?
-                <></> :
-                <div className="moimSigninArea">
-                    <div className="moimSignin">모임 참여</div>
-                </div>
-            }
+            {isMeetingOrder ? (
+                <></>
+                ) : (
+                isJoined ? (                    
+                    <div className="moimSigninArea">
+                        <div className="moimSignin" onClick={() => alert("준비중입니다")}>
+                        +친구 초대
+                        </div>
+                    </div>
+                ) : (
+                    <div className="moimSigninArea">
+                    <div className="moimSignin" onClick={meetingJoinedSuccess}>
+                        모임 참여
+                    </div>
+                    </div>
+                )
+                )}
             {isMeetingOrder ?
                 <>
                     <div className="make1jung">

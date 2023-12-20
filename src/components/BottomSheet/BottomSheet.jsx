@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as styles from './BottomSheetStyle';
 import MyMeetingList from './MyMeetingList_BottomSheet/MyMeetingList'
 import ShowMap from './ShowMap_BottomSheet/ShowMap'
+import JoinedMember from './JoinedMember_BottomSheet/JoinedMember'
 
 
 const BottomSheet = ({
@@ -11,7 +12,9 @@ const BottomSheet = ({
     toggleBottomSheet,
     selectBottomSheetPage,
     meetingSchedule,
-    currentMapId }) => {
+    currentMapId,
+    joinedMember
+}) => {
         
     const [location, setLocation] = useState("");
     const [locationDetail, setLocationDetail] = useState("");
@@ -31,13 +34,16 @@ const BottomSheet = ({
               meetingList={meetingList}
               myMeeting={myMeeting}
               toggleBottomSheet={toggleBottomSheet}
-              /> : selectBottomSheetPage === "showMap" ? 
+              /> :
+              selectBottomSheetPage === "showMap" ? 
                   <ShowMap
                       toggleBottomSheet={toggleBottomSheet}
                       location={location}
                       locationDetail={locationDetail}
                   /> :
-              <></>
+                selectBottomSheetPage === "joinedMember" ? 
+                      <JoinedMember joinedMember={joinedMember} toggleBottomSheet={toggleBottomSheet} /> :
+                <></>
           }
           
 

@@ -4,7 +4,7 @@ import imgA from '../../assets/A.png';
 import arrowLeftImg from '../../assets/arrow-left.png';
 import FooterMenu from '../../components/FooterMenu/FooterMenu';
 import BottomSheet from "../../components/BottomSheet/BottomSheet";
-import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import MeetingDetailsHome from './detailsHome/MeetingDetailsHome';
 import MeetingPost from './post/MeetingPost';
 import MeetingPhoto from './photo/MeetingPhoto';
@@ -130,9 +130,53 @@ const MeetingDetails = () => {
         toggleBottomSheet();
   }
 
-  useEffect(() => {
-    goToDetailsHome();
-  }, []);
+  // useEffect(() => {
+  //   goToDetailsHome();
+  // }, []);
+
+  const [joinedMember, setJoinedMember] = useState([
+    {
+      name: "김수지",
+      profileImg: imgA,
+      isOrder: true,
+      isSubOrder: false
+    }, {
+      name: "김철수",
+      profileImg: imgA,
+      isOrder: false,
+      isSubOrder: true
+    }, {
+      name: "장덕희",
+      profileImg: imgA,
+      isOrder: false,
+      isSubOrder: false
+    }, {
+      name: "최철기",
+      profileImg: imgA,
+      isOrder: false,
+      isSubOrder: false
+    },{
+    name: "안희진",
+    profileImg: imgA,
+    isOrder: false,
+    isSubOrder: false
+    },{
+    name: "안희진",
+    profileImg: imgA,
+    isOrder: false,
+    isSubOrder: false
+    },{
+    name: "안희진",
+    profileImg: imgA,
+    isOrder: false,
+    isSubOrder: false
+    },
+  ]);
+
+  const toggleJoinedMemberBottomSheet = () => {
+    handleSelectBottomSheetPage("joinedMember");
+  }
+
 
 
   return (
@@ -146,6 +190,8 @@ const MeetingDetails = () => {
               meetingSchedule={meetingSchedule}
               handleMeetingClick={handleMeetingClick}
               handleSelectBottomSheetPage={handleSelectBottomSheetPage}
+              joinedMember={joinedMember}
+              toggleJoinedMemberBottomSheet={toggleJoinedMemberBottomSheet}
             />
           }
         ></Route>
@@ -176,6 +222,7 @@ const MeetingDetails = () => {
         selectBottomSheetPage={selectBottomSheetPage}
         meetingSchedule={meetingSchedule}
         currentMapId={currentMapId}
+        joinedMember={joinedMember}
       />
       <FooterMenu/>
       </styles.MeetingDetailsBody>

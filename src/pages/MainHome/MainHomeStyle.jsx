@@ -13,6 +13,14 @@ export const MainBody = styled.div`
     padding: 16px;
     position: relative;
     display: flex;
+     a{
+        color: inherit;
+        text-decoration: none;
+        :hover{
+            color: inherit;
+            text-decoration: none;
+        }
+    }
     }
 
     .talkPng {

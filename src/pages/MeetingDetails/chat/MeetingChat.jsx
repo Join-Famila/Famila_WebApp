@@ -2,12 +2,17 @@ import React,{useEffect, useState} from 'react';
 import * as styles from './MeetingChatStyle';
 import arrowLeftImg from '../../../assets/arrow-left.png';
 import imgA from '../../../assets/A.png';
-import { Link } from 'react-router-dom';
+import imageChat from '../../../assets/Image_chat.png';
+import { Link , useNavigate} from 'react-router-dom';
 
 const MeetingChat = () => {
+    const navigate = useNavigate();
+
     const goBack = () => {
-    window.history.back();
+        // window.history.back();
+        navigate("/");
     };
+
 
     const [date, setDate] = useState("");
     useEffect(() => {
@@ -58,7 +63,7 @@ const MeetingChat = () => {
            
         </div>
         <div className="chatInputContainer">
-          {/* <img src="../images/chatinput.svg" className="inputIcon" /> */}
+          <img src={imageChat} alt="img" className="inputIcon" />
           <div className="input" contenteditable="true" data-placeholder="Enter message"></div>
 
         </div>           

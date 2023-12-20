@@ -8,10 +8,11 @@ import ScheduleSlider from "../../components/ScheduleSlider/ScheduleSlider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
 
 import imgA from '../../assets/A.png';
 import imgLeader from '../../assets/leader.png';
+
+import { Link } from 'react-router-dom';
 
 
 const MainHome = () => {
@@ -209,9 +210,9 @@ const MainHome = () => {
                         <div className="leader" style={{backgroundImage: `url(${imgLeader})`}}></div>
                     </div>
                     <div className="one">
-                    <div className="talkTitle">실버 스윙댄스 모임 두줄에서 일립시스</div>
+                    <div className="talkTitle"><Link to="/MeetingDetails/MeetingChat">실버 스윙댄스 모임 두줄에서 일립시스</Link></div>
                     <div className="people">73</div>
-                    <div className="message">어서오세요~!~! 저는 어쩌구 저쩌구 쏼라</div>
+                    <div className="message"><Link to="/MeetingDetails/MeetingChat">어서오세요~!~! 저는 어쩌구 저쩌구 쏼라</Link></div>
                     <div className="mesNumArea"><div className="mesNum">23</div></div>
                     </div>
                 </div>

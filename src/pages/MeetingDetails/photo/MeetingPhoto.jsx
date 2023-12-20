@@ -1,12 +1,16 @@
 import React,{useState} from 'react';
 import * as styles from './MeetingPhotoStyle';
 import arrowLeftImg from '../../../assets/arrow-left.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MeetingPhoto = () => {
+    
+    const navigate = useNavigate();
     const goBack = () => {
-    window.history.back();
-    };
+      // window.history.back();
+      navigate("/");
+  };
+
     const [meetingTitle, setMeetingTitle] = useState("실버들의 러닝 모임");
     return (
       <styles.MeetingPhotoBody>
