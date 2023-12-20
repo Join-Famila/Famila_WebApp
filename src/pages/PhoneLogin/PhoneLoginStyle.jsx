@@ -2,91 +2,159 @@
 
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
+export const background = styled.background`
+display: flex;
+flex-direction: column;
+width: 100vw;
+/* height: 100vh; */
+background-color: #ffffff;
+margin: 0px;
+padding: 0px;
+`
 
-export const Header = styled.div`
-    display: flex;
-    align-items: center;
-    margin-left: 20px; /* 왼쪽 여백 추가 */
-`;
+export const form = styled.form`
+`
 
-export const BackIcon = styled.button`
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 30px; /* BackIcon의 크기 조절 */
-    height: 30px; /* BackIcon의 크기 조절 */
-`;
+export const window = styled.window`
+display: flex;
+flex-direction: column;
+width: 100vw;
+/* height: 100vh; */
+background-color: #ffffff;
+margin: 0px;
+padding: 0px;
+`
 
-export const BackImage = styled.img`
-    width: 100%;
-    height: 100%;
-`;
+export const titleArea = styled.div`
+display: flex;
+flex-direction: column;
+background-color: #ffffff;
+width: 100vw;
+/* height: 100vh; */
+margin: 0 auto;
+padding: 0px;
+position: relative;
+overflow-y: auto;
+-ms-overflow-style: none; /*IE and Edge*/
+`
 
-export const Title = styled.div`
-    flex: 1;
-    height: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    margin-right: 55px; /* 왼쪽으로 이동시키기 위한 마진 추가 */
-`;
+export const BackIcon = styled.div`
+`
 
-export const Line = styled.hr`
-    width: 100%;
-`;
+export const backBtn = styled.div`
+width: 100%;
+height: 56px;
+position: relative;
+padding: 16px;
+box-sizing: border-box;
+box-shadow: 0 0 0 1px #e7e8ee inset;
+`
 
-export const Boxes = styled.div`
-    display: flex;
-    align-items: flex-start; /* 수정된 부분: 컬럼 시작을 위해 flex-start로 변경 */
-    justify-content: center; /* 수정된 부분: 전체를 가운데 정렬 */
-    flex-direction: row; /* 수정된 부분: 가로로 정렬 */
-`;
+export const img = styled.img`
+width: 100%;
+height: 100%;
+`
 
-export const PhoneNumber = styled.p`
-    font-size: 20px;
-    margin-left: 20px;
-    margin-bottom: 5px;
-    align-self: flex-start; /* 수정된 부분: 왼쪽 정렬 */
-`;
+export const titleText = styled.div`
+width: max-content;
+position: relative;
+margin: 0 auto;
+text-align: center;
+font-size: 18px;
+font-weight: 600;
+line-height: 24px;
+`
 
-export const InputPhoneNumber = styled.input`
-    width: 40%; /* 수정된 부분: 너비 조절 */
-    padding: 10px; /* 수정된 부분: 내부 콘텐츠의 높이 조절 */
-    margin-right: 5%; /* 수정된 부분: 우측 마진 추가 */
-    margin-bottom: 10px; /* 간격을 조절하기 위한 마진 추가 */
-`;
+export const inputArea = styled.fieldset`
+width: 100%;
+height: 250px;
+margin-top: 16px;
+border: none;
+padding: 16px;
+box-sizing: border-box;
+position: relative;
+`
 
-export const SendCertiNum = styled.button`
-    width: 40%; /* 수정된 부분: 너비 조절 */
-    padding: 10px; /* 수정된 부분: 내부 콘텐츠의 높이 조절 */
-    margin-left: 5%; /* 수정된 부분: 좌측 마진 추가 */
-    margin-bottom: 10px; /* 간격을 조절하기 위한 마진 추가 */
-`;
+export const midTilte = styled.div`
+width: 100%;
+height: 26px;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 26px;
+margin-bottom: 16px;
+`
 
-export const InputCertiNum = styled.input`
-    width: 90%; /* 수정된 부분: 너비 조절 */
-    padding: 10px; /* 수정된 부분: 내부 콘텐츠의 높이 조절 */
-    margin-left: 2%; /* 수정된 부분: 좌측 마진 추가 */
-    margin-bottom: 10px; /* 간격을 조절하기 위한 마진 추가 */
-`;
+export const NumBalsongContainer = styled.div`
+width: 38%;
+height: 56px;
+box-sizing: border-box;
+position: relative;
+border-radius: 4px;
+border: 1px solid #d6d7e1;
+background: #ffffff;
+color: #5c5f70;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+`
 
-export const CheckButton = styled.button`
-    width: 90%;
-    height: 5%;
-    background-color: #F5935C;
-    margin-top: 90%;
-    color: white;
-    font-size: 23px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-`;
+ export const NumInput = styled.input`
+ width: 60%;
+ height: 56px;
+ box-sizing: border-box;
+ position: relative;
+ border-radius: 4px;
+ border: 1px solid #d6d7e1;
+ text-indent: 12px;
+ `
+
+ export const BalsongInput = styled.input`
+ width: 38%;
+ height: 56px;
+ box-sizing: border-box;
+ position: relative;
+ border-radius: 4px;
+ border: 1px solid #d6d7e1;
+ background: #ffffff;
+ color: #5c5f70;
+ font-size: 16px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 20px;
+ `
+
+export const InzungInput = styled.input`
+width: 100%;
+height: 56px;
+box-sizing: border-box;
+position: relative;
+border-radius: 4px;
+border: 1px solid #d6d7e1;
+text-indent: 12px;
+margin-bottom: 3px;
+`
+
+export const okArea = styled.fieldset`
+width: 100%;
+padding: 0 16px 20px 16px;
+box-sizing: border-box;
+border: none;
+position: absolute;
+bottom: 0;
+`
+
+export const okBtn = styled.fieldset`
+width: 100%;
+height: 44px;
+border: none;
+border-radius: 100px;
+background: var(--primary-secondary-secondary, #f5935c);
+
+color: #ffffff;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px;
+`
