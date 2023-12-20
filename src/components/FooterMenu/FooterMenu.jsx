@@ -36,13 +36,8 @@ const FooterMenu = () => {
         console.log("myInfo");
         setCurrentPageSelect("myInfo");
     }
-    const goToCreateMeeting = () => {
-        
-    }
-
-    return (
-      <>
-          <styles.CreateMeeting onClick={goToCreateMeeting}>+ 모임 만들기</styles.CreateMeeting>
+    
+    return (  
           <styles.FooterBody>
               <styles.menuHome onClick={homeButton}
                style={{
@@ -78,7 +73,7 @@ const FooterMenu = () => {
               </styles.menuMyInfo>
             
         </styles.FooterBody>
-      </>
+
   )
 }
 

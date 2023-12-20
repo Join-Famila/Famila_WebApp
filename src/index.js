@@ -18,6 +18,7 @@ import FindID from "./pages/FindID/findID";
 import FindPW from "./pages/FindPW/findPW";
 import HowToUse from "./pages/HowToUse/HowToUse"; //모달로 해야한다면 삭제해야함
 import PhoneLogin from "./pages/PhoneLogin/PhoneLogin";
+import MeetingDetails from "./pages/MeetingDetails/MeetingDetails";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import axios from "axios";
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
     path: "/HowToUse",
     element: <HowToUse />,
   }, //모달로 한다면 삭제해야함
+  {
+    path: "/MeetingDetails",
+    element: <MeetingDetails />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

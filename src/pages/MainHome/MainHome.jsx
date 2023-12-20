@@ -131,6 +131,11 @@ const MainHome = () => {
         toggleBottomSheet();
     }
 
+    const goToCreateMeeting = () => {
+        
+    }
+
+
     return (
       <>
           <HeaderMenu/>
@@ -210,6 +215,7 @@ const MainHome = () => {
                     </div>
                 </div>
             </styles.MainBody>
+            <styles.CreateMeeting onClick={goToCreateMeeting}>+ 모임 만들기</styles.CreateMeeting>
             <FooterMenu/>
       </>
   )

@@ -206,3 +206,18 @@ export const MeetingSchedule = styled.div`
         }
     }
 `
+export const CreateMeeting = styled.div`
+   position: fixed;
+    bottom: 90px; /* 원하는 위치로 조절하세요 */
+    right: 20px; /* 원하는 위치로 조절하세요 */
+    padding: 10px;
+    background-color: #f7a070;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 12;
+`
