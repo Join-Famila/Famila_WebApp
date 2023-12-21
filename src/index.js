@@ -19,6 +19,7 @@ import FindPW from "./pages/FindPW/findPW";
 import HowToUse from "./pages/HowToUse/HowToUse"; //모달로 해야한다면 삭제해야함
 import PhoneLogin from "./pages/PhoneLogin/PhoneLogin";
 import MeetingDetails from "./pages/MeetingDetails/MeetingDetails";
+import JoinPayment from "./pages/MeetingDetails/JoinPayment/JoinPayment";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import axios from "axios";
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
   {
     path: "/CreateMeeting",
     element: <CreateMeeting />,
+  },
+  {
+    path: "/JoinPayment",
+    element: <JoinPayment />,
   },
 ]);
 

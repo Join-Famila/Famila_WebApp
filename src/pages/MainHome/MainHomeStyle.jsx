@@ -129,6 +129,11 @@ export const InfoText = styled.div`
 
 export const ProfileIconImg = styled.img`
   margin: 5%;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
 `;
 
 export const MyMeeting = styled.div`
@@ -150,7 +155,11 @@ export const MeetingItem = styled.div`
   margin-right: 5%;
   text-align: center;
   img {
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
   }
   p {
     word-break: break-word;
