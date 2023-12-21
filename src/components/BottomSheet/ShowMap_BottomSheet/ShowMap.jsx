@@ -23,7 +23,7 @@ const ShowMap = ({
     };
 
   return (
-      <>
+      <styles.ShowMapBody>
           <styles.BottomSheetHeader>
               <p>지도 보기</p>
               <FontAwesomeIcon icon={faX}
@@ -44,7 +44,7 @@ const ShowMap = ({
                       <styles.LocationCopy onClick={copyLocation}>주소 복사하기</styles.LocationCopy>
               </styles.LocationInfo>
           </styles.LocationInfoContainer>
-      </>
+      </styles.ShowMapBody>
   )
 }
 

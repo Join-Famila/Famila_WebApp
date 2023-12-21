@@ -9,7 +9,7 @@ export const FooterBody = styled.div`
     align-items: center;
     z-index: 10;
     width: 100%;
-    bottom: 0;
+    bottom: -1%;
     left: 0;
     color: #8a8d9e;
     background-color: white;
@@ -21,22 +21,6 @@ export const FooterBody = styled.div`
             margin: 0;
         }
     }
-`
-
-export const CreateMeeting = styled.div`
-   position: fixed;
-    bottom: 90px; /* 원하는 위치로 조절하세요 */
-    right: 20px; /* 원하는 위치로 조절하세요 */
-    padding: 10px;
-    background-color: #f7a070;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 120px;
-    text-align: center;
-    font-weight: bold;
-    z-index: 12;
 `
 
 export const menuHome = styled.div`

@@ -4,7 +4,7 @@ export const HeaderBody = styled.div`
     position: fixed;
     display: flex;
     justify-content: space-between;
-    margin: 3%;
+    padding: 3%;
     align-items: center;
     z-index: 10;
     width: 95%;
