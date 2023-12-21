@@ -176,7 +176,7 @@ const MainHome = () => {
                 {isAccountRegister ?
                 <styles.AccountRegister>
                         <FontAwesomeIcon icon={faCircleInfo} />
-                        <div>모임을 만들고 수익을 얻으시려면 <span>여기에서</span> 계좌를 등록해 주세요!</div>
+                        <div>모임을 만들고 수익을 얻으시려면 <span onClick={()=>alert("준비중입니다.")}>여기에서</span> 계좌를 등록해 주세요!</div>
                 </styles.AccountRegister> : 
                     <></>}
                 {/* 모임 일정 */}

@@ -141,6 +141,7 @@ export const MeetingChatBody = styled.div`
     box-shadow: 0 -1px 0 0 #e7e8ee inset;
     border-top: 1px solid var(--gray-gray200, #E7E8EE);
     background: var(--Background-Background-50, #FFF);
+    margin-top: 20%;
 
   }
   
