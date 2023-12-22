@@ -1,5 +1,6 @@
 {
-  "name": "mirthon_client",
+  "homepage": "https://join-famila.github.io/Famila_WebApp",
+  "name": "eulji_likelion",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +17,7 @@
     "crypto-js": "^4.2.0",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.16",
+    "gh-pages": "^6.1.0",
     "ios-pwa-splash": "^1.0.0",
     "lottie-react": "^2.4.0",
     "pwa-asset-generator": "^6.3.1",
@@ -48,7 +50,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm rum build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
