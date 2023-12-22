@@ -10,6 +10,26 @@ export const background = styled.div`
   background-color: #ffffff;
   margin: 0px;
   padding: 0px;
+  .head {
+    width: 100%;
+    height: 56px;
+    padding: 18px 80px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    box-shadow: 0 0 0 1px #e7e8ee inset;
+    position: relative;
+  }
+  .leftArrow {
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    left: 16px;
+    position: absolute;
+    cursor: pointer;
+  }
 `;
 
 export const form = styled.form``;
@@ -63,8 +83,8 @@ export const titleText = styled.div`
   line-height: 24px;
 `;
 
-export const inputArea = styled.fieldset`
-  width: 100%;
+export const inputArea = styled.div`
+  // width: 100%;
   height: 250px;
   margin-top: 16px;
   border: none;
@@ -73,7 +93,7 @@ export const inputArea = styled.fieldset`
   position: relative;
 `;
 
-export const midTilte = styled.div`
+export const midTitle = styled.div`
   width: 100%;
   height: 26px;
   font-size: 20px;
@@ -84,18 +104,20 @@ export const midTilte = styled.div`
 `;
 
 export const NumBalsongContainer = styled.div`
-  width: 38%;
+  width: 100%;
   height: 56px;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  border: 1px solid #d6d7e1;
+  // border: 1px solid #d6d7e1;
   background: #ffffff;
   color: #5c5f70;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const NumInput = styled.input`
@@ -106,9 +128,11 @@ export const NumInput = styled.input`
   border-radius: 4px;
   border: 1px solid #d6d7e1;
   text-indent: 12px;
+  font-size: 16px;
 `;
 
-export const BalsongInput = styled.input`
+export const BalsongButton = styled.div`
+  cursor: pointer;
   width: 38%;
   height: 56px;
   box-sizing: border-box;
@@ -121,6 +145,8 @@ export const BalsongInput = styled.input`
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+  display: grid;
+  place-items: center; /* 수평 및 수직 중앙 정렬 */
 `;
 
 export const InzungInput = styled.input`
@@ -131,28 +157,30 @@ export const InzungInput = styled.input`
   border-radius: 4px;
   border: 1px solid #d6d7e1;
   text-indent: 12px;
-  margin-bottom: 3px;
+  margin-top: 10px;
+  font-size: 16px;
 `;
 
-export const okArea = styled.fieldset`
-  width: 100%;
-  padding: 0 16px 20px 16px;
-  box-sizing: border-box;
-  border: none;
-  position: absolute;
-  bottom: 0;
-`;
-
-export const okBtn = styled.fieldset`
+export const okBtn = styled.div`
   width: 100%;
   height: 44px;
   border: none;
   border-radius: 100px;
   background: var(--primary-secondary-secondary, #f5935c);
-
   color: #ffffff;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  cursor: pointer;
+  display: grid;
+  place-items: center; /* 수평 및 수직 중앙 정렬 */
+`;
+export const CertifiedText = styled.p`
+  font-weight: bold;
 `;

@@ -10,42 +10,41 @@ import logo from "../../assets/logo.png";
 import kakaoLogin from "../../assets/kakaoLogin.png";
 import PhoneLogin from "../../assets/PhoneLogin.png";
 import NoLogin from "../../assets/NoLogin.png";
- 
-export default function Login(){
-    const [pw, setPw] = useState("");
-    const [showPw,setShowPw] = useState(false);
-    const dispatch = useDispatch();
-    const userData = useSelector((state) => state.user)
-    const navigate = useNavigate();
-    const [isLoading,setIsLoading] = useState(false);
-    const viewIntro = localStorage.getItem("visited");
 
+export default function Login() {
+  const [pw, setPw] = useState("");
+  const [showPw, setShowPw] = useState(false);
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const viewIntro = localStorage.getItem("visited");
 
-    useEffect(() => {
-        if(!viewIntro){
-            navigate('/intro')
-        }else{
-            if(userData.value.isAuthorized){
-                navigate('/')
-            }
-        }
-    },[])
+  useEffect(() => {
+    if (!viewIntro) {
+      navigate("/intro");
+    } else {
+      if (userData.value.isAuthorized) {
+        navigate("/");
+      }
+    }
+  }, []);
 
-    return(
-        <styles.Container>
-            <styles.ServiceInfo>
-                <styles.LogoImage src={logo}/>
-            </styles.ServiceInfo>
-            <styles.KakaoButton>
-                <styles.kakaoImage src={kakaoLogin}/>
-            </styles.KakaoButton>
-            <styles.PhoneButton>
-                <styles.PhoneImage src={PhoneLogin}/>
-            </styles.PhoneButton>
-            <styles.NoLoginButton onClick={()=>navigate('/')}>
-                <styles.NoLoginImage src={NoLogin}/>
-            </styles.NoLoginButton>
-            {isLoading && <LoadingScreen/>}
-        </styles.Container>
-    );
-};
+  return (
+    <styles.Container>
+      <styles.ServiceInfo>
+        <styles.LogoImage src={logo} />
+      </styles.ServiceInfo>
+      <styles.KakaoButton onClick={() => alert("준비중입니다")}>
+        <styles.kakaoImage src={kakaoLogin} />
+      </styles.KakaoButton>
+      <styles.PhoneButton onClick={() => navigate("/phoneLogin")}>
+        <styles.PhoneImage src={PhoneLogin} />
+      </styles.PhoneButton>
+      <styles.NoLoginButton onClick={() => navigate("/")}>
+        <styles.NoLoginImage src={NoLogin} />
+      </styles.NoLoginButton>
+      {isLoading && <LoadingScreen />}
+    </styles.Container>
+  );
+}
