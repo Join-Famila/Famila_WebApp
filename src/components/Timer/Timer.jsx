@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Timer = ({ limitTime, setIsCertified }) => {
+const Timer = ({ limitTime, setIsGetCertiNum }) => {
   const [time, setTime] = useState(limitTime);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Timer = ({ limitTime, setIsCertified }) => {
             이 지났습니다. <br />
             인증번호를 다시 발급해주세요
           </span>
-          {setIsCertified(false)}
+          {setIsGetCertiNum(false)}
         </>
       ) : (
         <span> {formatTime(time)}</span>

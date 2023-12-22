@@ -10,8 +10,11 @@ export default function PhoneLogin() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [certiNum, setCertiNum] = useState(1234);
   const [getCertiNum, setGetCertiNum] = useState(0);
-  const [isCertified, setIsCertified] = useState(false);
-  const [validTime, setValidTime] = useState(10);
+  const [isCertified, setIsCertified] = useState(false); //인증번호가 일치한지
+  const [isGetCertiNum, setIsGetCertiNum] = useState(false); //인증번호 받았는지
+  const [isRenderFirst, setIsRenderFirst] = useState(false);
+
+  const [validTime, setValidTime] = useState(5);
 
   const handleSendCertiNum = () => {
     // TODO: 인증번호를 서버로 요청 및 전송하는 로직
@@ -38,8 +41,10 @@ export default function PhoneLogin() {
   };
 
   const sendCertiNum = () => {
+    setIsRenderFirst(true);
     alert("인증번호가 발송되었습니다. ");
     setValidTime(validTime);
+    setIsGetCertiNum(true);
     setIsCertified(true);
   };
 
@@ -80,22 +85,26 @@ export default function PhoneLogin() {
               className="inzung_input"
               onChange={handleChangeGetCertiNum}
             />
-            <styles.CertifiedText
-              style={{ color: `${isCertified ? "#27ae60" : "#eb5757"}` }}
-            >
-              {isCertified ? (
-                <>
-                  인증번호가 문자로 발송되었습니다.
-                  <br />
-                  <Timer
-                    limitTime={validTime}
-                    setIsCertified={setIsCertified}
-                  />
-                </>
-              ) : (
-                "인증번호가 일치하지 않습니다."
-              )}
-            </styles.CertifiedText>
+            {isRenderFirst ? (
+              <styles.CertifiedText
+                style={{ color: `${isCertified ? "#27ae60" : "#eb5757"}` }}
+              >
+                {isCertified ? (
+                  <>
+                    인증번호가 문자로 발송되었습니다.
+                    <br />
+                    <Timer
+                      limitTime={validTime}
+                      setIsGetCertiNum={setIsGetCertiNum}
+                    />
+                  </>
+                ) : (
+                  "인증번호가 일치하지 않습니다."
+                )}
+              </styles.CertifiedText>
+            ) : (
+              <></>
+            )}
           </styles.inputArea>
           <styles.okBtn
             name="ok"
