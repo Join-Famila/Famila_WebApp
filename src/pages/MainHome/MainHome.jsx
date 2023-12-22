@@ -139,7 +139,7 @@ const MainHome = () => {
   };
 
   const createMeeting = () => {
-    navigate("/CreateMeeting");
+    navigate("/MakeMoim");
   };
 
   return (

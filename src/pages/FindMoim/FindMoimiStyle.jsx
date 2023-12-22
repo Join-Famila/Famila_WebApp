@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const FindMoim = styled.div`
-.head {
+  padding-bottom: 30%;
+  .head {
     width: 100%;
     height: 56px;
     padding: 18px 80px;
@@ -13,13 +14,13 @@ export const FindMoim = styled.div`
     box-shadow: 0 0 0 1px #e7e8ee inset;
     position: relative;
   }
-  
+
   .titleBox {
     display: flex;
     padding: 2px 10px 0px 10px;
     box-sizing: border-box;
   }
-  
+
   .title {
     padding: 12px;
     color: var(--Gray-Cgray400, #c4c7d4);
@@ -28,7 +29,7 @@ export const FindMoim = styled.div`
     line-height: 24px;
     box-sizing: border-box;
   }
-  
+
   .selTitle {
     padding: 12px;
     color: var(--primary-secondary-secondary, #f5935c);
@@ -38,7 +39,7 @@ export const FindMoim = styled.div`
     box-sizing: border-box;
     border-bottom: 2px solid var(--primary-secondary-secondary, #f5935c);
   }
-  
+
   .myMoim {
     width: 100%;
     line-height: 26px;
@@ -49,7 +50,7 @@ export const FindMoim = styled.div`
     padding: 0 16px;
     box-sizing: border-box;
   }
-  
+
   .ora {
     color: #f5935c;
   }
@@ -61,7 +62,7 @@ export const FindMoim = styled.div`
     border-radius: 12px;
     border: 1px solid var(--gray-gray-300, #d6d7e1);
   }
-  
+
   .moimTitleArea {
     display: flex;
     height: 36px;
@@ -74,7 +75,7 @@ export const FindMoim = styled.div`
     align-items: center;
     justify-content: center;
   }
-  
+
   .moimMinImg {
     border-radius: 100px;
     background-image: url("../images/A.png");
@@ -83,7 +84,7 @@ export const FindMoim = styled.div`
     height: 24px;
     position: relative;
   }
-  
+
   .moimTitleText {
     width: max-content;
     line-height: 22px;
@@ -91,7 +92,7 @@ export const FindMoim = styled.div`
     font-weight: 500;
     color: var(--gray-pure, #fff);
   }
-  
+
   .moimNeyoungArea {
     height: 148px;
     width: 100%;
@@ -102,7 +103,7 @@ export const FindMoim = styled.div`
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .moimWhen {
     width: 100%;
     position: relative;
@@ -116,22 +117,22 @@ export const FindMoim = styled.div`
     align-items: center;
     gap: 8px;
   }
-  
+
   .grayMin {
     color: var(--gray-gray-500, #afb2c0);
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
   }
-  
+
   .grayMid {
     color: var(--gray-gray-500, #afb2c0);
   }
-  
+
   .red {
     color: var(--Red, #eb5757);
   }
-  
+
   .illjungCham {
     height: 44px;
     box-sizing: border-box;
@@ -148,7 +149,7 @@ export const FindMoim = styled.div`
     align-items: center;
     justify-content: center;
   }
-  
+
   .dot {
     width: 100%;
     height: 8px;
@@ -158,26 +159,26 @@ export const FindMoim = styled.div`
     justify-content: center;
     gap: 5px;
   }
-  
+
   .blackGrayDot {
     width: 8px;
     height: 8px;
     border-radius: 100%;
     background: #c4c7d4;
   }
-  
+
   .grayDot {
     width: 8px;
     height: 8px;
     border-radius: 100%;
     background: #e7e8ee;
   }
-  
+
   .searchArea {
     margin: 24px 16px 16px 16px;
     position: relative;
   }
-  
+
   .search {
     width: 100%;
     height: 56px;
@@ -186,14 +187,14 @@ export const FindMoim = styled.div`
     border-radius: 4px;
     border: 1px solid var(--Gray-Cgray300, #d6d7e1);
   }
-  
+
   input[type="text"].search::placeholder {
     color: #8a8d9e;
     font-size: 18px;
     font-weight: 500;
     line-height: 22px;
   }
-  
+
   .searchIcon {
     width: 24px;
     height: 24px;
@@ -201,7 +202,7 @@ export const FindMoim = styled.div`
     right: 12px;
     top: 16px;
   }
-  
+
   .address {
     width: 100%;
     position: relative;
@@ -215,14 +216,14 @@ export const FindMoim = styled.div`
     display: flex;
     align-items: center;
   }
-  
+
   .downArrow {
     width: 20px;
     height: 20px;
     position: relative;
     margin-left: 10px;
   }
-  
+
   .chiArea {
     height: 40px;
     margin: 4px 16px 18px 16px;
@@ -233,7 +234,7 @@ export const FindMoim = styled.div`
     gap: 8px;
     position: relative;
   }
-  
+
   .whiteborder {
     width: max-content;
     height: max-content;
@@ -249,7 +250,7 @@ export const FindMoim = styled.div`
     box-sizing: border-box;
     position: relative;
   }
-  
+
   .oranBorder {
     width: max-content;
     height: max-content;
@@ -265,7 +266,7 @@ export const FindMoim = styled.div`
     color: var(--primary-secondary-secondary, #f5935c);
     position: relative;
   }
-  
+
   .moimListArea {
     padding: 10px 16px 16px 16px;
     width: 100%;
@@ -276,13 +277,13 @@ export const FindMoim = styled.div`
     border-bottom: 1px solid var(--gray-gray200, #e7e8ee);
     box-sizing: border-box;
   }
-  
+
   .moimListImgTittle {
     width: 100%;
     display: flex;
     gap: 8px;
   }
-  
+
   .moimListImg {
     border-radius: 100px;
     background-image: url("../images/A.png");
@@ -291,7 +292,7 @@ export const FindMoim = styled.div`
     height: 100px;
     position: relative;
   }
-  
+
   .moimListTitle {
     width: max-content;
     overflow: hidden;
@@ -302,7 +303,7 @@ export const FindMoim = styled.div`
     line-height: 26px; /* 130% */
     position: relative;
   }
-  
+
   .titleAddArea {
     position: relative;
     display: flex;
@@ -310,7 +311,7 @@ export const FindMoim = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .moimListAdd {
     width: max-content;
     line-height: 20px;
@@ -322,12 +323,12 @@ export const FindMoim = styled.div`
     line-height: 20px; /* 125% */
     position: relative;
   }
-  
+
   .listAddicon {
     width: 18px;
     height: 18px;
   }
-  
+
   .tag {
     height: max-content;
     position: relative;
@@ -344,7 +345,7 @@ export const FindMoim = styled.div`
     color: var(--gray-gray700, #5c5f70);
     line-height: 20px;
   }
-  
+
   .chiTagArea {
     width: 100%;
     height: 34px;
@@ -355,7 +356,7 @@ export const FindMoim = styled.div`
     overflow-y: auto;
     gap: 8px;
   }
-  
+
   .whiteTag {
     width: max-content;
     height: max-content;
@@ -370,9 +371,10 @@ export const FindMoim = styled.div`
     box-sizing: border-box;
     line-height: 20px;
   }
-  
+
   .makeMoim {
-    width: 187px;
+    justify-content: center;
+    width: 200px;
     height: 48px;
     position: fixed;
     display: flex;
@@ -385,13 +387,13 @@ export const FindMoim = styled.div`
     right: 16px;
     align-items: center;
   }
-  
+
   .plus {
     width: 16px;
     height: 16px;
     position: relative;
   }
-  
+
   .makeMoText {
     width: max-content;
     line-height: 24px;
@@ -399,7 +401,7 @@ export const FindMoim = styled.div`
     font-weight: 600;
     color: var(--gray-pure, #fff);
   }
-  
+
   .none {
     width: 100%;
     height: 106px;
@@ -407,13 +409,13 @@ export const FindMoim = styled.div`
     box-sizing: border-box;
     display: flex;
   }
-  
+
   .nonenone {
     width: 100%;
     height: 106px;
     position: relative;
   }
-  
+
   .Nav {
     width: 100%;
     height: 70px;
@@ -425,7 +427,7 @@ export const FindMoim = styled.div`
     display: flex;
     background: #fff;
   }
-  
+
   .navArea {
     position: relative;
     display: flex;
@@ -434,13 +436,13 @@ export const FindMoim = styled.div`
     width: 25%;
     gap: 8px;
   }
-  
+
   .navIcon {
     width: 24px;
     height: 24px;
     position: relative;
   }
-  
+
   .navOrangeText {
     position: relative;
     color: var(--primary-secondary-secondary, #f5935c);
@@ -448,7 +450,7 @@ export const FindMoim = styled.div`
     font-weight: 600;
     line-height: 14px;
   }
-  
+
   .navText {
     position: relative;
     color: var(--gray-gray-600, #8a8d9e);
@@ -456,7 +458,7 @@ export const FindMoim = styled.div`
     font-weight: 600;
     line-height: 14px;
   }
-  
+
   .moimjag {
     display: flex;
     align-items: center;
@@ -468,14 +470,14 @@ export const FindMoim = styled.div`
     line-height: 12px; /* 100% */
     margin-bottom: -4px;
   }
-  
+
   .crown {
     position: relative;
     width: 16px;
     height: 16px;
     margin: 0 4px;
   }
-  
+
   .kakao0you {
     width: 100%;
     display: flex;
@@ -490,13 +492,13 @@ export const FindMoim = styled.div`
     font-weight: 500;
     line-height: 22px; /* 137.5% */
   }
-  
+
   .kakao {
     width: 18px;
     height: 18px;
     margin-right: 20px;
   }
-  
+
   .typeChiArea {
     width: 100%;
     padding: 24px 16px 18px 16px;
@@ -506,7 +508,7 @@ export const FindMoim = styled.div`
     gap: 8px;
     flex-wrap: wrap;
   }
-  
+
   .typeTagList {
     width: 100%;
     padding: 0 16px;
@@ -514,7 +516,7 @@ export const FindMoim = styled.div`
     position: relative;
     overflow-y: auto;
   }
-  
+
   .tagList {
     height: 40px;
     position: relative;
@@ -525,7 +527,7 @@ export const FindMoim = styled.div`
     padding-left: 12px;
     align-items: center;
   }
-  
+
   .backBtn {
     width: 24px;
     height: 24px;
@@ -533,6 +535,4 @@ export const FindMoim = styled.div`
     top: 16px;
     left: 16px;
   }
-  
-
-`
+`;

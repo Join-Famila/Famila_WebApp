@@ -14,7 +14,7 @@ export default function PhoneLogin() {
   const [isGetCertiNum, setIsGetCertiNum] = useState(false); //인증번호 받았는지
   const [isRenderFirst, setIsRenderFirst] = useState(false);
 
-  const [validTime, setValidTime] = useState(5);
+  const [validTime, setValidTime] = useState(300);
 
   const handleSendCertiNum = () => {
     // TODO: 인증번호를 서버로 요청 및 전송하는 로직
@@ -30,7 +30,7 @@ export default function PhoneLogin() {
   const checkNum = () => {
     if (certiNum === getCertiNum) {
       alert("성공적으로 로그인되었습니다.");
-      navigate("/");
+      navigate("/SeniorInf");
     } else {
       setIsCertified(!isCertified);
     }
