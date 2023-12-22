@@ -20,12 +20,17 @@ import HowToUse from "./pages/HowToUse/HowToUse"; //모달로 해야한다면 �
 import PhoneLogin from "./pages/PhoneLogin/PhoneLogin";
 import MeetingDetails from "./pages/MeetingDetails/MeetingDetails";
 import JoinPayment from "./pages/MeetingDetails/JoinPayment/JoinPayment";
+import MakeMoim from "./pages/MakeMoim/MakeMoim";
+import SeniorInf from "./pages/Senior_inf/SeniorInf";
+import FindMoim from "./pages/FindMoim/FindMoim";
+
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import axios from "axios";
 
 import MainHome from "./pages/MainHome/MainHome";
 import CreateMeeting from "./pages/MainHome/CreateMeeting";
+
 
 export let persistor = persistStore(store);
 axios.defaults.withCredentials = true;
@@ -90,6 +95,18 @@ const router = createBrowserRouter([
   {
     path: "/JoinPayment",
     element: <JoinPayment />,
+  },
+  {
+    path: "/MakeMoim",
+    element: <MakeMoim />,
+  },
+  {
+    path: "/SeniorInf",
+    element: <SeniorInf />,
+  },
+  {
+    path: "/FindMoim",
+    element: <FindMoim />,
   },
 ]);
 
